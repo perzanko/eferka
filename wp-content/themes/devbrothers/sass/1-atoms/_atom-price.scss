@@ -1,0 +1,36 @@
+.price {
+  @include font-size(1.25);
+  font-weight: 800;
+  position: relative;
+  margin-left: 30px;
+  display: block;
+  float: left;
+  clear: left;
+  
+  &:before {
+    position: absolute;
+    display: block;
+    content: " ";
+    background-image: url('assets/price.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 21px;
+    left: -30px;
+    top: 3px;
+  }
+  &--dashed {
+    margin-top: $margin;
+    margin-left: $margin--large;
+    &:after {
+      position: absolute;
+      display: block;
+      content: " ";
+      width: 200%;
+      left: -100%;
+      top: -15px;
+      border-top: 2px dashed $color;
+    }
+  }
+}

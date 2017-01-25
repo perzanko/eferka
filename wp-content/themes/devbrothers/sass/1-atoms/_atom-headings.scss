@@ -1,0 +1,18 @@
+.heading {
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  line-height: 2;
+  &:before {
+    display: block;
+    content: " ";
+    width: 130px;
+    max-width: 50%;
+    height: 8px;
+    background-color: $color-accent;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+  }
+}
