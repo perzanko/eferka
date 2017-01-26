@@ -17,6 +17,10 @@
     &__img {
       width: 100%;
       height: auto;
+      &--full {
+        width: 60%;
+        margin: $margin auto;
+      }
     }
     &__title {
       color: $color;
@@ -37,6 +41,17 @@
       padding: $padding--tiny $padding--small;
       margin: 0;
       list-style-type: none;
+      &--big {
+        @include font-size(1.2);
+        .course__box__description__item {
+          padding-left: $padding;
+          &:before {
+            top: 11px;
+            height: 6px;
+            width: 6px;
+          }
+        }
+      }
       &__item {
         padding-left: $padding--small;
         position: relative;
@@ -58,6 +73,14 @@
       justify-content: space-between;
       padding: $padding--small;
       padding-top: 0;
+      &--left {
+        display: block;
+        // flex-direction: column;
+        // justify-content: flex-start;
+        .button {
+          float: left;clear: left;
+        }
+      }
       .button {
         margin-top: $margin;
       }

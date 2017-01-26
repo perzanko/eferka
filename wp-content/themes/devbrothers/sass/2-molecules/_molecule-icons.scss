@@ -1,0 +1,8 @@
+.icon {
+  text-align: center;
+  padding-bottom: $padding;
+  &__title {
+    text-transform: uppercase;
+    @include font-size(1.3);
+  }
+}

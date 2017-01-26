@@ -1154,6 +1154,9 @@ mark, ins {
 big {
   font-size: 125%; }
 
+hr {
+  margin: 24px 0 !important; }
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -1182,7 +1185,7 @@ hr {
   margin-bottom: 1.5em; }
 
 ul, ol {
-  margin: 0 0 1.5em 3em; }
+  margin: .5em 0 1.5em 0; }
 
 ul {
   list-style: disc; }
@@ -1262,6 +1265,19 @@ select {
 textarea {
   width: 100%; }
 
+input, textarea {
+  line-height: 2;
+  font-size: 19.2px;
+  font-size: 1.2rem;
+  background: #eee;
+  color: #191919;
+  width: 100%;
+  margin: 12px 0;
+  padding: 6px 12px !important;
+  outline: none;
+  border-radius: 10px;
+  border: 0px solid transparent !important; }
+
 /*--------------------------------------------------------------
 # 1-Atoms
 --------------------------------------------------------------*/
@@ -1325,11 +1341,19 @@ a {
   background-color: #eee;
   padding-top: 24px;
   padding-bottom: 24px; }
-
 .bg-white {
   background-color: #fff;
   padding-top: 24px;
   padding-bottos: 24px; }
+.bg-red {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  background-image: url("assets/background.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 150vh;
+  transition: all .3s ease-in-out; }
 
 .price {
   font-size: 20px;
@@ -1385,6 +1409,9 @@ a {
     .course__box__img {
       width: 100%;
       height: auto; }
+      .course__box__img--full {
+        width: 60%;
+        margin: 24px auto; }
     .course__box__title {
       color: #020101;
       font-weight: 800;
@@ -1404,6 +1431,15 @@ a {
       padding: 6px 12px;
       margin: 0;
       list-style-type: none; }
+      .course__box__description--big {
+        font-size: 19.2px;
+        font-size: 1.2rem; }
+        .course__box__description--big .course__box__description__item {
+          padding-left: 24px; }
+          .course__box__description--big .course__box__description__item:before {
+            top: 11px;
+            height: 6px;
+            width: 6px; }
       .course__box__description__item {
         padding-left: 12px;
         position: relative; }
@@ -1422,10 +1458,122 @@ a {
       justify-content: space-between;
       padding: 12px;
       padding-top: 0; }
+      .course__box__meta--left {
+        display: block; }
+        .course__box__meta--left .button {
+          float: left;
+          clear: left; }
       .course__box__meta .button {
         margin-top: 24px; }
       .course__box__meta .price {
         margin-top: 24px; }
+
+.icon {
+  text-align: center;
+  padding-bottom: 24px; }
+  .icon__title {
+    text-transform: uppercase;
+    font-size: 20.8px;
+    font-size: 1.3rem; }
+
+.form {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  min-height: 600px;
+  display: block;
+  margin: 350px auto 0 auto;
+  border-radius: 10px;
+  padding: 48px;
+  background: #eeeeee;
+  background: -moz-linear-gradient(top, #eeeeee 0%, rgba(255, 255, 255, 0.48) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, rgba(255, 255, 255, 0.48)));
+  background: -webkit-linear-gradient(top, #eeeeee 0%, rgba(255, 255, 255, 0.48) 100%);
+  background: -o-linear-gradient(top, #eeeeee 0%, rgba(255, 255, 255, 0.48) 100%);
+  background: -ms-linear-gradient(top, #eeeeee 0%, rgba(255, 255, 255, 0.48) 100%);
+  background: linear-gradient(to bottom, #eeeeee 0%, rgba(255, 255, 255, 0.48) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff', GradientType=0 );
+  position: relative;
+  z-index: 3;
+  -webkit-box-shadow: 3px 4px 49px -9px rgba(0, 0, 0, 0.73);
+  -moz-box-shadow: 3px 4px 49px -9px rgba(0, 0, 0, 0.73);
+  box-shadow: 3px 4px 49px -9px rgba(0, 0, 0, 0.73); }
+  .form__title {
+    color: #191919 !important; }
+  @media (min-width: 1200px) {
+    .form {
+      animation-name: pulse;
+      animation-duration: 5s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite; }
+      .form:hover, .form:active, .form:focus {
+        animation: none; }
+    @-webkit-keyframes pulse {
+      0% {
+        opacity: 1; }
+      50% {
+        opacity: .9; }
+      100% {
+        opacity: 1; } }
+    @-moz-keyframes pulse {
+      0% {
+        opacity: 1; }
+      50% {
+        opacity: .9; }
+      100% {
+        opacity: 1; } }
+    @-o-keyframes pulse {
+      0% {
+        opacity: 1; }
+      50% {
+        opacity: .9; }
+      100% {
+        opacity: 1; } }
+    @keyframes pulse {
+      0% {
+        opacity: 1; }
+      50% {
+        opacity: .85; }
+      100% {
+        opacity: 1; } } }
+  .form:before {
+    position: absolute;
+    display: block;
+    content: " ";
+    width: 94%;
+    border-radius: 10px;
+    height: 20px;
+    top: -10px;
+    z-index: 2;
+    left: 3%;
+    background: rgba(255, 255, 255, 0.93);
+    background: rgba(255, 255, 255, 0.61);
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.61) 0%, rgba(246, 246, 246, 0.61) 49%, rgba(246, 246, 246, 0) 50%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.61)), color-stop(49%, rgba(246, 246, 246, 0.61)), color-stop(50%, rgba(246, 246, 246, 0)));
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.61) 0%, rgba(246, 246, 246, 0.61) 49%, rgba(246, 246, 246, 0) 50%);
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 0.61) 0%, rgba(246, 246, 246, 0.61) 49%, rgba(246, 246, 246, 0) 50%);
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.61) 0%, rgba(246, 246, 246, 0.61) 49%, rgba(246, 246, 246, 0) 50%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.61) 0%, rgba(246, 246, 246, 0.61) 49%, rgba(246, 246, 246, 0) 50%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6', GradientType=0 ); }
+  .form:after {
+    position: absolute;
+    display: block;
+    content: " ";
+    width: 88%;
+    background: rgba(238, 238, 238, 0.5);
+    border-radius: 10px;
+    height: 20px;
+    top: -20px;
+    z-index: 1;
+    left: 6%;
+    background: rgba(255, 255, 255, 0.38);
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.38) 0%, rgba(246, 246, 246, 0.38) 49%, rgba(246, 246, 246, 0) 50%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.38)), color-stop(49%, rgba(246, 246, 246, 0.38)), color-stop(50%, rgba(246, 246, 246, 0)));
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.38) 0%, rgba(246, 246, 246, 0.38) 49%, rgba(246, 246, 246, 0) 50%);
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 0.38) 0%, rgba(246, 246, 246, 0.38) 49%, rgba(246, 246, 246, 0) 50%);
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.38) 0%, rgba(246, 246, 246, 0.38) 49%, rgba(246, 246, 246, 0) 50%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.38) 0%, rgba(246, 246, 246, 0.38) 49%, rgba(246, 246, 246, 0) 50%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6', GradientType=0 ); }
 
 /*--------------------------------------------------------------
 # 3-Organisms

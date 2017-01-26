@@ -31,3 +31,15 @@ select {
 textarea {
 	width: 100%;
 }
+input, textarea {
+	line-height: 2;
+	@include font-size(1.2);
+	background: #eee;
+	color: $color-text;
+	width: 100%;
+	margin: $margin--small 0;
+	padding: $padding--tiny $padding--small !important;
+	outline: none;
+	border-radius: 10px;
+	border: 0px solid transparent !important;
+}
