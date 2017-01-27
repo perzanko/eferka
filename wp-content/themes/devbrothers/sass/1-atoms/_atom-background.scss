@@ -1,17 +1,12 @@
 .bg {
+  padding: $padding--huge 0;
   &-grey {
     background-color: $color-grey;
-    padding-top: $padding;
-    padding-bottom: $padding;
   }
   &-white {
     background-color: #fff;
-    padding-top: $padding;
-    padding-bottos: $padding;
   }
   &-red {
-    padding-top: $padding;
-    padding-bottom: $padding;
     background-image: url('assets/background.svg');
     background-position: center;
     background-size: cover;

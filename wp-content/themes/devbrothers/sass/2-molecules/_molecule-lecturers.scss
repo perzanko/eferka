@@ -1,0 +1,29 @@
+.lecturers {
+  &__item {
+    text-align: center;
+    margin: $margin--huge auto;
+    &__title {
+      position: relative;
+      margin: $margin--small 0 $margin--large 0;
+      &:after {
+        position: absolute;
+        content: " ";
+        display: block;
+        width: 10%;
+        height: 8px;
+        background-color: $color-accent;
+        left: 50%;
+        bottom: -20px;
+        transform: translate(-50%,-50%);
+      }
+    }
+    &__img {
+      max-width: 150px;
+      max-height: 150px;
+      border-radius: 50%;
+    }
+    &__description {
+      @include font-size(1.1);
+    }
+  }
+}

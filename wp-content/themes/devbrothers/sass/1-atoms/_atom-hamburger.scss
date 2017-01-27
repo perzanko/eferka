@@ -1,0 +1,72 @@
+.hamburger {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 70px;
+  height: 70px;
+  font-size: 0;
+  text-indent: -9999px;
+  z-index: 21;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  top: $margin--small;
+  right: $margin--small;
+  &:focus {
+    outline: none;
+  }
+  background-color: transparent;
+  span {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 6px;
+    width: 65%;
+    transform: translate(-50%,-50%);
+    background: $color-accent;
+    transition: all .3s ease-in-out;
+    &:before, &:after {
+      position: absolute;
+      display: block;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background-color: $color-accent;
+      content: "";
+      transition: all .3s ease-in-out;
+    }
+    &:before {
+      top: -15px;
+      transition-property: top, transform;
+    }
+    &:after {
+      bottom: -15px;
+      transition-property: bottom, transform;
+    }
+  }
+  &--is-active {
+    span {
+      background: none;
+      transition: all .3s ease-in-out;
+      &:before {
+        top: 0;
+        transform: rotate(45deg);
+        transition: all .3s ease-in-out;
+      }
+      &:after {
+        bottom: 0;
+        transform: rotate(-45deg);
+        transition: all .3s ease-in-out;
+      }
+    }
+  }
+  @include breakpoint(sm) {
+    display: none;
+  }
+}
