@@ -141,3 +141,74 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+// Register Custom Post Type
+function eferka_courses() {
+
+	$labels = array(
+		'name'                  => _x( 'Kursy', 'Post Type General Name', 'text_domain' ),
+		'singular_name'         => _x( 'Kurs', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'             => __( 'Kursy', 'text_domain' ),
+		'name_admin_bar'        => __( 'Kurs', 'text_domain' ),
+		'archives'              => __( 'Kursy', 'text_domain' ),
+		'attributes'            => __( 'Atrybuty kursu', 'text_domain' ),
+		'parent_item_colon'     => __( 'Nadrzędny kurs', 'text_domain' ),
+		'all_items'             => __( 'Wszystkie kursy', 'text_domain' ),
+		'add_new_item'          => __( 'Dodaj nowy kurs', 'text_domain' ),
+		'add_new'               => __( 'Dodaj nowy', 'text_domain' ),
+		'new_item'              => __( 'Nowy kurs', 'text_domain' ),
+		'edit_item'             => __( 'Edytuj kurs', 'text_domain' ),
+		'update_item'           => __( 'Aktualizuj kurs', 'text_domain' ),
+		'view_item'             => __( 'Zobacz kurs', 'text_domain' ),
+		'view_items'            => __( 'Zobacz kursy', 'text_domain' ),
+		'search_items'          => __( 'Szukaj kursu', 'text_domain' ),
+		'not_found'             => __( 'Nie znaleziono kursów', 'text_domain' ),
+		'not_found_in_trash'    => __( 'Nie znaleziono kursów', 'text_domain' ),
+		'featured_image'        => __( 'Obrazek kursu', 'text_domain' ),
+		'set_featured_image'    => __( 'Dodaj obrazek kursu', 'text_domain' ),
+		'remove_featured_image' => __( 'Usuń obrazek kursu', 'text_domain' ),
+		'use_featured_image'    => __( 'Użyj jako obrazek kursu', 'text_domain' ),
+		'insert_into_item'      => __( 'Dodaj do kursu', 'text_domain' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this item', 'text_domain' ),
+		'items_list'            => __( 'Items list', 'text_domain' ),
+		'items_list_navigation' => __( 'Items list navigation', 'text_domain' ),
+		'filter_items_list'     => __( 'Filter items list', 'text_domain' ),
+	);
+	$rewrite = array(
+		'slug'                  => 'kursy',
+		'with_front'            => true,
+		'pages'                 => true,
+		'feeds'                 => true,
+	);
+	$args = array(
+		'label'                 => __( 'Kurs', 'text_domain' ),
+		'description'           => __( 'Kursy EFERKA', 'text_domain' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', 'thumbnail', 'page-attributes', ),
+		'taxonomies'            => array( 'category', 'post_tag' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'menu_icon'             => 'dashicons-book',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'rewrite'               => $rewrite,
+		'capability_type'       => 'post',
+	);
+	register_post_type( 'eferka_course', $args );
+
+}
+add_action( 'init', 'eferka_courses', 0 );
+
+add_action('admin_menu','remove_default_post_type');
+
+function remove_default_post_type() {
+	remove_menu_page('edit.php');
+}

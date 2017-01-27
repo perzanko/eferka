@@ -13,14 +13,3 @@ $(document).ready(function (){
     }
   });
 });
-
-
-$(document).ready(function () {
-  setTimeout(function () {
-    $('.course--masonry').masonry({
-      itemSelector: '.course__box',
-      fitWidth: true,
-      gutter: 10,
-    });
-  }, 100);
-});

@@ -1467,7 +1467,9 @@ a {
     box-shadow: 0 1px #e6e6e6;
     transition: all .3s ease-in-out;
     cursor: pointer;
-    align-self: flex-start; }
+    align-self: flex-start;
+    display: block;
+    margin-top: 20px !important; }
     .course__box:hover {
       -webkit-box-shadow: 2px 2px 9px -2px #969696;
       -moz-box-shadow: 2px 2px 9px -2px #969696;
@@ -1536,9 +1538,6 @@ a {
   .course--masonry {
     margin: 0 auto;
     display: block; }
-    .course--masonry .course__box {
-      width: 22%;
-      margin-bottom: 10px; }
 
 .icon {
   text-align: center;
@@ -1670,6 +1669,17 @@ a {
   .lecturers__item__description {
     font-size: 17.6px;
     font-size: 1.1rem; }
+
+.gradient {
+  min-height: 200px;
+  background: #eeeeee;
+  background: -moz-linear-gradient(top, #eeeeee 0%, white 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, white));
+  background: -webkit-linear-gradient(top, #eeeeee 0%, white 100%);
+  background: -o-linear-gradient(top, #eeeeee 0%, white 100%);
+  background: -ms-linear-gradient(top, #eeeeee 0%, white 100%);
+  background: linear-gradient(to bottom, #eeeeee 0%, white 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff', GradientType=0 ); }
 
 /*--------------------------------------------------------------
 # 3-Organisms

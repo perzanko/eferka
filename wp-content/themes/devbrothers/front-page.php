@@ -7,66 +7,31 @@
       </div>
       <div class="col-xs-12">
         <div class="course">
+          <?php
+          $args = array( 'post_type' => 'eferka_course', 'posts_per_page' => 4 );
+          $loop = new WP_Query( $args );
+          while ( $loop->have_posts() ) : $loop->the_post(); ?>
           <div class="course__box">
-            <img class="course__box__img" src="<?php echo get_site_URL(); ?>/wp-content/themes/devbrothers/assets/youtube-course.jpg" alt="<?php bloginfo('description'); ?>">
-            <span class="course__box__title">Pierwszy milion na Youtubie</span>
+            <img class="course__box__img" src="
+            <?php
+            if ( has_post_thumbnail() ) {
+            	the_post_thumbnail_url();
+            }
+            ?>
+            " alt="<?php bloginfo('description'); ?>">
+            <span class="course__box__title"><?php the_title(); ?></span>
             <ul class="course__box__description clearfix">
-              <li class="course__box__description__item">Pomysł - jak zbudować projekt</li>
-              <li class="course__box__description__item">Inspiracje - jak się pozycjonować</li>
-              <li class="course__box__description__item">Technika - jak zrealizować materiał</li>
-              <li class="course__box__description__item">Emisja - jak zwiększyć zasięg odbiorców</li>
+              <li class="course__box__description__item"><?php the_field('wiersz_1'); ?></li>
+              <li class="course__box__description__item"><?php the_field('wiersz_2'); ?></li>
+              <li class="course__box__description__item"><?php the_field('wiersz_3'); ?></li>
+              <li class="course__box__description__item"><?php the_field('wiersz_4'); ?></li>
             </ul>
             <div class="course__box__meta">
-              <a href="#" class="button button--small">Zobacz</a>
-              <span class="price">349 zł</span>
+              <a href="<?php echo get_permalink(); ?>" class="button button--small">Zobacz</a>
+              <span class="price"><?php the_field('course_cena'); ?> zł</span>
             </div>
           </div>
-
-          <div class="course__box">
-            <img class="course__box__img" src="<?php echo get_site_URL(); ?>/wp-content/themes/devbrothers/assets/lustrzanka-course.jpg" alt="<?php bloginfo('description'); ?>">
-            <span class="course__box__title">Filmowanie lustrzanką dla początkujących</span>
-            <ul class="course__box__description clearfix">
-              <li class="course__box__description__item">Podstawy techniczne</li>
-              <li class="course__box__description__item">Storyboard</li>
-              <li class="course__box__description__item">Klip, teledysk, komercyjne formy audiowizualne</li>
-              <li class="course__box__description__item">Montaż</li>
-            </ul>
-            <div class="course__box__meta">
-              <a href="#" class="button button--small">Zobacz</a>
-              <span class="price">499 zł</span>
-            </div>
-          </div>
-
-          <div class="course__box">
-            <img class="course__box__img" src="<?php echo get_site_URL(); ?>/wp-content/themes/devbrothers/assets/firma-course.jpg" alt="<?php bloginfo('description'); ?>">
-            <span class="course__box__title">Promocja firmy w internecie</span>
-            <ul class="course__box__description clearfix">
-              <li class="course__box__description__item">Najważniejsze technologie i narzędzia</li>
-              <li class="course__box__description__item">Sprawdzone praktyki i rozwiązania</li>
-              <li class="course__box__description__item">Najpopularniejsze praktyki i serwisy internetowe</li>
-              <li class="course__box__description__item">Najlepsze rozwiązania do praktycznego zastosowania</li>
-            </ul>
-            <div class="course__box__meta">
-              <a href="#" class="button button--small">Zobacz</a>
-              <span class="price">399 zł</span>
-            </div>
-          </div>
-
-          <div class="course__box">
-            <img class="course__box__img" src="<?php echo get_site_URL(); ?>/wp-content/themes/devbrothers/assets/fotograf-course.jpg" alt="<?php bloginfo('description'); ?>">
-            <span class="course__box__title">Profesjonalna sesja fotograficzna</span>
-            <ul class="course__box__description clearfix">
-              <li class="course__box__description__item">Sesja fotograficzna</li>
-              <li class="course__box__description__item">Retusz i obróbka graficzna</li>
-              <li class="course__box__description__item">Przygotowanie zdjęć na nośniku cyfrowym</li>
-              <li class="course__box__description__item">Opcjonalnie: dodanie profilu do fotobiblioteki modelek</li>
-            </ul>
-            <div class="course__box__meta">
-              <a href="#" class="button button--small">Zobacz</a>
-              <span class="price">159 zł</span>
-            </div>
-          </div>
-
+          <?php endwhile; ?>
         </div>
       </div>
     </div>

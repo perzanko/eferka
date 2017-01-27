@@ -30,7 +30,7 @@
     <div class="container header-container">
       <div class="row">
         <div class="col-xs-6 col-sm-3">
-          <img class="header__logo" src="<?php echo get_site_URL(); ?>/wp-content/themes/devbrothers/assets/logo-eferka.png" title="<?php bloginfo('title') ?>" alt="<?php bloginfo('title') ?>">
+          <a href="<?php echo get_site_URL(); ?>"><img class="header__logo" src="<?php echo get_site_URL(); ?>/wp-content/themes/devbrothers/assets/logo-eferka.png" title="<?php bloginfo('title') ?>" alt="<?php bloginfo('title') ?>"></a>
         </div>
         <div class="col-xs-12 col-sm-9">
           <nav>

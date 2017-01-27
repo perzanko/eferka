@@ -28,7 +28,7 @@
     <div class="container header-container">
       <div class="row">
         <div class="col-xs-6 col-sm-3">
-          <img class="header__logo" src="<?php echo get_site_URL(); ?>/wp-content/themes/devbrothers/assets/logo-eferka.png" title="<?php bloginfo('title') ?>" alt="<?php bloginfo('title') ?>">
+          <a href="<?php echo get_site_URL(); ?>"><img class="header__logo" src="<?php echo get_site_URL(); ?>/wp-content/themes/devbrothers/assets/logo-eferka.png" title="<?php bloginfo('title') ?>" alt="<?php bloginfo('title') ?>"></a>
         </div>
         <div class="col-xs-12 col-sm-9">
           <nav>
@@ -42,9 +42,9 @@
         <div class="col-xs-12">
           <div class="header-heading">
             <h1 class="heading-h1 heading-h1--white">Oglądaj. Wyświetlaj. Ucz się z najlepszymi.</h1>
-            <p class="header-heading__description">Profesjonalne kursy i warsztaty lorem ipsum. Curabitur blandit tempus porttitor.</p>
-            <a href="#" class="button button--big button--white">Warsztaty</a>
-            <a href="#" class="button button--big">Kontakt</a>
+            <p class="header-heading__description">Profesjonalne kursy i warsztaty filmowe. Curabitur blandit tempus porttitor.</p>
+            <a href="<?php echo get_site_URL(); ?>/kursy" class="button button--big button--white">Kursy</a>
+            <a href="<?php echo get_site_URL(); ?>/kontakt" class="button button--big">Kontakt</a>
           </div>
         </div>
       </div>

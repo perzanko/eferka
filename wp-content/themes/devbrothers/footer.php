@@ -18,14 +18,8 @@
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="form">
-					<h4 class="form__title">Wyślij wiadomość</h4>
-					<form class="form__form" action="index.html" method="post">
-						<label for=""></label><input id="name" type="text" name="name" placeholder="Imię i nazwisko">
-						<label for=""></label><input id="name" type="email" name="email" placeholder="E-mail">
-						<label for=""></label><input id="name" type="text" name="topic" placeholder="Temat">
-						<label for=""></label><textarea id="name" name="textarea" rows="5" cols="80" placeholder="Treść"></textarea>
-						<input class="button" type="submit" name="submit" value="Wyślij">
-					</form>
+					<h4 class="form__title" id="contact">Wyślij wiadomość</h4>
+						<?php echo do_shortcode('[contact-form-7 id="48" title="Formularz 1"]'); ?>
 				</div>
 			</div>
 		</div>
