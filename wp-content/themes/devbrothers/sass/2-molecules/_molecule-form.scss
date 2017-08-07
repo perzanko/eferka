@@ -39,7 +39,7 @@
   display: block;
   margin: 250px auto 0 auto;
   border-radius: 10px;
-  padding: $padding--large;
+  padding: $padding--small;
   background: rgba(238,238,238,1);
   background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(255,255,255,0.48) 100%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(238,238,238,1)), color-stop(100%, rgba(255,255,255,0.48)));
@@ -53,6 +53,9 @@
   -webkit-box-shadow: 3px 4px 49px -9px rgba(0,0,0,0.73);
 -moz-box-shadow: 3px 4px 49px -9px rgba(0,0,0,0.73);
 box-shadow: 3px 4px 49px -9px rgba(0,0,0,0.73);
+@include breakpoint(md) {
+  padding: $padding--large;
+}
   &:before {
     position: absolute;
     display: block;

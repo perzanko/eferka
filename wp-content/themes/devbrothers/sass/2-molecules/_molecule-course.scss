@@ -4,15 +4,22 @@
   justify-content: space-between;
 
   &__box {
-    flex-basis: 24%;
+    flex-basis: 100%;
     background-color: white;
     border-radius: 3px;
     box-shadow: 0 1px #e6e6e6;
     transition: all .3s ease-in-out;
     cursor: pointer;
-    align-self: flex-start;
     display: block;
     margin-top: 20px !important;
+    position: relative;
+    padding-bottom: 70px;
+    @include breakpoint(sm) {
+      flex-basis: 48%;
+    }
+    @include breakpoint(md) {
+      flex-basis: 24%;
+    }
     &:hover {
       -webkit-box-shadow: 2px 2px 9px -2px rgba(150,150,150,1);
       -moz-box-shadow: 2px 2px 9px -2px rgba(150,150,150,1);
@@ -45,6 +52,13 @@
       padding: $padding--tiny $padding--small;
       margin: 0;
       list-style-type: none;
+      &--center {
+        padding-top: $padding;
+        max-width: 400px;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: left;
+      }
       &--big {
         @include font-size(1.2);
         .course__box__description__item {
@@ -91,6 +105,11 @@
       .price {
         margin-top: $margin;
       }
+      &--absolute {
+        position: absolute !important;
+        bottom: 0  !important;
+        width: 100% !important;
+      }
     }
   }
   &--masonry {
@@ -99,4 +118,8 @@
     .course__box {
     }
   }
+}
+div.box-container {
+  position: relative;
+  min-height: 680px;
 }

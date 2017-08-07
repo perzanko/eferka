@@ -26,7 +26,7 @@
               <li class="course__box__description__item"><?php the_field('wiersz_3'); ?></li>
               <li class="course__box__description__item"><?php the_field('wiersz_4'); ?></li>
             </ul>
-            <div class="course__box__meta">
+            <div class="course__box__meta course__box__meta--absolute">
               <a href="<?php echo get_permalink(); ?>" class="button button--small">Zobacz</a>
               <span class="price"><?php the_field('course_cena'); ?> zł</span>
             </div>

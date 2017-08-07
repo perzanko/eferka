@@ -1,9 +1,10 @@
+@charset "UTF-8";
 /*!
 Theme Name: Devbrothers
-Theme URI: http://underscores.me/
+Theme URI: http://www.devbrothers.pl/
 Author: Devbrothers
-Author URI: http://Devbrothers
-Description: Description
+Author URI: http://www.devbrothers.pl/
+Description: Motyw stworzony dla Fundacji Rozwoju Kinematografii przez Devbrothers. Wszelkie prawa zastrzeżone / www.devbrothers.pl
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1345,7 +1346,10 @@ a {
     color: #bd081c; }
 
 .bg {
-  padding: 96px 0; }
+  padding: 48px 0; }
+  @media (min-width: 992px) {
+    .bg {
+      padding: 96px 0; } }
   .bg-grey {
     background-color: #eee; }
   .bg-white {
@@ -1357,6 +1361,14 @@ a {
     background-repeat: no-repeat;
     min-height: 150vh;
     transition: all .3s ease-in-out; }
+
+.bg-div {
+  padding-top: 48px;
+  padding-bottom: 48px; }
+  @media (min-width: 992px) {
+    .bg-div {
+      padding-top: 96px;
+      padding-bottom: 96px; } }
 
 .price {
   font-size: 20px;
@@ -1461,15 +1473,22 @@ a {
   flex-wrap: wrap;
   justify-content: space-between; }
   .course__box {
-    flex-basis: 24%;
+    flex-basis: 100%;
     background-color: white;
     border-radius: 3px;
     box-shadow: 0 1px #e6e6e6;
     transition: all .3s ease-in-out;
     cursor: pointer;
-    align-self: flex-start;
     display: block;
-    margin-top: 20px !important; }
+    margin-top: 20px !important;
+    position: relative;
+    padding-bottom: 70px; }
+    @media (min-width: 768px) {
+      .course__box {
+        flex-basis: 48%; } }
+    @media (min-width: 992px) {
+      .course__box {
+        flex-basis: 24%; } }
     .course__box:hover {
       -webkit-box-shadow: 2px 2px 9px -2px #969696;
       -moz-box-shadow: 2px 2px 9px -2px #969696;
@@ -1499,6 +1518,12 @@ a {
       padding: 6px 12px;
       margin: 0;
       list-style-type: none; }
+      .course__box__description--center {
+        padding-top: 24px;
+        max-width: 400px;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: left; }
       .course__box__description--big {
         font-size: 19.2px;
         font-size: 1.2rem; }
@@ -1535,9 +1560,17 @@ a {
         margin-top: 24px; }
       .course__box__meta .price {
         margin-top: 24px; }
+      .course__box__meta--absolute {
+        position: absolute !important;
+        bottom: 0  !important;
+        width: 100% !important; }
   .course--masonry {
     margin: 0 auto;
     display: block; }
+
+div.box-container {
+  position: relative;
+  min-height: 680px; }
 
 .icon {
   text-align: center;
@@ -1555,7 +1588,7 @@ a {
   display: block;
   margin: 250px auto 0 auto;
   border-radius: 10px;
-  padding: 48px;
+  padding: 12px;
   background: #eeeeee;
   background: -moz-linear-gradient(top, #eeeeee 0%, rgba(255, 255, 255, 0.48) 100%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, rgba(255, 255, 255, 0.48)));
@@ -1607,6 +1640,9 @@ a {
         opacity: .85; }
       100% {
         opacity: 1; } } }
+  @media (min-width: 992px) {
+    .form {
+      padding: 48px; } }
   .form:before {
     position: absolute;
     display: block;
@@ -1686,13 +1722,16 @@ a {
 --------------------------------------------------------------*/
 header {
   width: 100%;
-  min-height: 90vh;
+  min-height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("assets/header-background.jpg");
   background-attachment: fixed;
   position: relative; }
+  @media (min-width: 768px) {
+    header {
+      min-height: 90vh; } }
   header .header__logo {
     position: relative;
     z-index: 20;
@@ -1770,8 +1809,11 @@ header {
     opacity: 1; }
   header .header-heading {
     max-width: 550px;
-    margin: 0 auto;
+    margin: 50px auto;
     text-align: center; }
+    @media (min-width: 1200px) {
+      header .header-heading {
+        margin: 100px auto; } }
     header .header-heading .button {
       margin: 6px; }
     header .header-heading__description {

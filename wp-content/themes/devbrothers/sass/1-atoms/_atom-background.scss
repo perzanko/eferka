@@ -1,5 +1,8 @@
 .bg {
-  padding: $padding--huge 0;
+  padding: $padding--large 0;
+  @include breakpoint(md) {
+    padding: $padding--huge 0;
+  }
   &-grey {
     background-color: $color-grey;
   }
@@ -14,5 +17,13 @@
     min-height: 150vh;
     transition: all .3s ease-in-out;
 
+  }
+}
+.bg-div {
+  padding-top: $padding--large;
+  padding-bottom: $padding--large;
+  @include breakpoint(md) {
+    padding-top: $padding--huge;
+    padding-bottom: $padding--huge;
   }
 }
